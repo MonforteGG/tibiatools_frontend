@@ -1,0 +1,17 @@
+# Etapa única para desarrollo
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Instalar dependencias
+COPY package*.json ./
+RUN npm install
+
+# Copiar el resto del código
+COPY . .
+
+# Exponer el puerto que usa ng serve
+EXPOSE 4200
+
+# Ejecutar Angular en modo desarrollo
+CMD ["npm", "run", "start", "--", "--host", "0.0.0.0"]

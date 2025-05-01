@@ -1,0 +1,60 @@
+<app-background>
+    <app-layout
+    headerImage="/assets/images/spellbook.png"
+    headerTitle="Today Stats"
+    headerSubtitle="Today Main Stadistics"
+  >
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Columna izquierda: tarjeta grande (ocupa 2 filas) -->
+    <app-card class="md:row-span-2" title="Top Experience">
+      <app-top-experience></app-top-experience>
+    </app-card>
+
+    <app-card class="md:row-span-2" title="Top Monsters Killed">
+        <!-- Dropdown -->
+        <div class="mb-4">
+            <label for="world-select" class="text-sm font-medium text-slate-400">Select World:</label>
+            <select
+            id="world-select"
+            [(ngModel)]="selectedWorld"
+            class="mt-1 block w-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 dark:text-white rounded px-3 py-2 text-sm"
+            >
+            <option *ngFor="let world of worlds" [value]="world">{{ world }}</option>
+            </select>
+        </div>
+        <app-top-monsters-killed [world]="selectedWorld"></app-top-monsters-killed>
+    </app-card>
+  
+    <!-- Columna derecha: tarjeta superior -->
+    <app-card title="Daily Boosted" subtitle="Velocidad de respuesta">
+        <app-daily-boosted></app-daily-boosted>
+    </app-card>
+  
+    <!-- Columna derecha: tarjeta inferior -->
+    <app-card title="Where is Rashid?">
+        <div class="flex items-center gap-4">
+          <!-- Imagen a la izquierda -->
+          <img
+            [src]="getRashidInfo().image"
+            [alt]="getRashidInfo().city"
+            class="w-46 h-46 rounded-md shadow-sm"
+          />
+      
+          <!-- Texto a la derecha -->
+          <div>
+            <p class="text-base font-semibold text-slate-800 dark:text-slate-100">
+              {{ getRashidInfo().city }}
+            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 italic">
+              {{ getRashidInfo().description }}
+            </p>
+          </div>
+        </div>
+      </app-card>
+      
+  </div>
+  
+  
+
+    </app-layout>
+</app-background>

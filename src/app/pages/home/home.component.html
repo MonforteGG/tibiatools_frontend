@@ -1,0 +1,111 @@
+<app-background>
+  <div class="px-6 py-12 max-w-7xl mx-auto text-slate-900 dark:text-white">
+    <div class="text-center mb-12">
+      <div class="text-center mb-12">
+        <div class="text-xl font-bold tracking-wide flex justify-center">
+          <div class="flex items-center space-x-2 text-5xl font-bold">
+            <span
+              class="flex items-center space-x-1 hover:border-slate-700/50 rounded-sm"
+            >
+              <span class="tracking-tight">Utevo</span>
+              <span
+                class="bg-indigo-100 text-indigo-700 dark:bg-orange-200 dark:text-orange-700 
+                       px-2 py-0.5 rounded-md text-sm font-semibold leading-tight"
+              >
+                Lux
+              </span>
+            </span>
+          </div>
+        </div>
+        <p class="text-xl text-slate-600 dark:text-slate-300 mt-4">Bringing light to your Tibia adventures.</p>
+      </div>
+      
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[1fr] gap-6 grid-flow-dense">
+
+
+
+      <!-- Loot Classifier (larger) -->
+      <div class="md: row-span-1 col-span-1 cursor-pointer" routerLink="/loot-classifier">
+        <app-card title="Loot Classifier">
+          <span class="flex justify-center">
+            <img src="assets/images/loot_classifier.png" alt="Loot" class="h-58 w-58 mb-3">
+          </span>
+          <p>Upload an image and get a detailed breakdown of your loot.</p>
+        </app-card>
+      </div>
+
+      <!-- Rashid -->
+      <div class="cursor-pointer row-span-1" routerLink="/stats">
+        <app-card title="Where is Rashid?">
+          <span class="flex justify-center">
+            <img
+              [src]="isDarkMode ? '/assets/images/rashid_dark.png' : '/assets/images/rashid.png'"
+              alt="Top Creatures"
+              class="h-60 w-102 mb-2"
+            />
+          </span>
+          <p>Find Rashid's current location to sell your items.</p>
+        </app-card>
+      </div>
+
+      <!-- Top Creatures Killed -->
+      <div class="cursor-pointer row-span-1" routerLink="/stats">
+        <app-card title="Top Creatures Killed">
+          <span class="flex justify-center">
+            <img
+              [src]="isDarkMode ? '/assets/images/top_creatures_dark.png' : '/assets/images/top_creatures.png'"
+              alt="Top Creatures"
+              class="h-70 w-150 mb-2"
+            />
+          </span>
+          <p>Check which creatures were hunted the most yesterday.</p>
+        </app-card>
+      </div>
+      
+      <!-- Daily Boosted -->
+      <div class="cursor-pointer col-span-1" routerLink="/stats">
+        <app-card title="Daily Boosted">
+          <span class="flex justify-center">
+            <img
+              [src]="isDarkMode ? '/assets/images/daily_boosted_dark.png' : '/assets/images/daily_boosted.png'"
+              alt="Top Creatures"
+              class="h-30 w-70 mb-2"
+            />
+          </span>
+          <p>See which creature is boosted today.</p>
+        </app-card>
+      </div>
+
+      <!-- Donate -->
+      <div class="cursor-pointer">
+        <app-card title="Support ❤️">
+          <span class="flex justify-center">
+            <img src="/assets/images/donate.png" alt="Boosted" class="h-33 w-86 mb-2">
+          </span>
+          <p>Help me keep this project alive with a small donation.</p>
+        </app-card>
+      </div>
+      
+      <!-- Top Experience -->
+      <div class="cursor-pointer row-span-1" routerLink="/stats">
+        <app-card title="Top Experience">
+          <span class="flex justify-center">
+            <img
+              [src]="isDarkMode ? '/assets/images/top_exp_dark.png' : '/assets/images/top_exp.png'"
+              alt="Top Creatures"
+              class="h-21 w-100 mb-2"
+            />
+          </span>
+          <p>Ranking of players with highest experience.</p>
+        </app-card>
+      </div>
+      
+      
+      
+
+
+    </div>
+  </div>
+</app-background>

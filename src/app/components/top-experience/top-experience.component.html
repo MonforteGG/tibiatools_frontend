@@ -1,0 +1,41 @@
+<ul class="flex flex-col gap-4">
+    <li
+      *ngFor="let player of topPlayers"
+      class="grid grid-cols-[2rem_2.5rem_1fr] items-center gap-2 text-sm text-slate-200"
+    >
+      <!-- Rank -->
+      <div class="text-left font-bold text-slate-900 dark:text-white text-lg">
+        {{ player.rank }}
+      </div>
+  
+      <!-- Ícono -->
+      <div class="w-8 h-8 flex justify-center items-center">
+        <img
+          [src]="getVocationIcon(player.vocation)"
+          [alt]="player.vocation"
+          [title]="player.vocation"
+          class="w-8 h-8 object-contain"
+        />
+      </div>
+  
+      <!-- Info -->
+      <div class="flex flex-col items-end min-w-0">
+        <p class="font-semibold text-slate-900 dark:text-white flex items-center gap-1">
+          {{ player.name }}
+          <img
+            *ngIf="player.rank === 1"
+            src="/assets/images/crown.png"
+            alt="Top 1"
+            class="w-7 h-7"
+          />
+        </p>
+        <p class="text-xs text-slate-700 dark:text-slate-400 truncate">
+          Level {{ player.level }} – {{ player.vocation }}
+        </p>
+        <p class="text-xs text-slate-500">
+          {{ player.value | number }} XP
+        </p>
+      </div>
+    </li>
+  </ul>
+  

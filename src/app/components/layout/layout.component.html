@@ -1,0 +1,25 @@
+<div class="max-w-7xl mx-auto rounded-xl border border-slate-300 dark:border-slate-300/20 overflow-hidden">
+    <!-- Header -->
+    <div class="bg-white dark:bg-slate-900 p-6 text-center">
+      <div class="flex items-center justify-center mb-2">
+        <div class="w-12 h-12 bg-slate-200/50 dark:bg-slate-950 border border-slate-300 dark:border-slate-300/20 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+          <img [src]="headerImage" *ngIf="headerImage" />
+        </div>
+        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">{{ headerTitle }}</h1>
+      </div>
+      <p class="text-slate-700 dark:text-blue-100">{{ headerSubtitle }}</p>
+    </div>
+  
+    <!-- Slot content -->
+    <div class="bg-slate-200 dark:bg-slate-800 p-6">
+      <ng-content></ng-content>
+    </div>
+  
+    <!-- Footer -->
+    <div class="bg-white dark:bg-slate-900 py-4 px-6 text-center">
+      <p class="text-gray-600 text-sm">
+        Utevo Lux &copy; {{ currentYear }} | Todos los derechos reservados
+      </p>
+    </div>
+  </div>
+  

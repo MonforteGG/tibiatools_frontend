@@ -1,0 +1,27 @@
+<ul class="flex flex-col gap-4">
+    <li
+      *ngFor="let monster of topKills"
+      class="grid grid-cols-[2rem_2.5rem_1fr] items-center gap-2 text-sm text-slate-200"
+    >
+      <!-- Rank -->
+      <div class="text-left text-slate-900 dark:text-white font-bold text-lg">
+        {{ monster.rank }}
+      </div>
+  
+      <!-- Imagen de la criatura -->
+      <div class="w-10 h-10 flex justify-center items-center">
+        <img
+          [src]="getImageUrl(monster.name)"
+          [alt]="monster.name"
+          class="w-10 h-10 object-contain"
+        />
+      </div>
+  
+      <!-- Información -->
+      <div class="flex flex-col items-end">
+        <p class="font-semibold text-slate-800 dark:text-white">{{ toTitleCase(monster.name) }}</p>
+        <p class="text-xs text-slate-500">{{ monster.kills }} kills</p>
+      </div>
+    </li>
+  </ul>
+  
