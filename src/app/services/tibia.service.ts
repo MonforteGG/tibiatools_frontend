@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { HighscoreEntry } from '../models/highscore-entry.model';
-import { KillStatisticsEntry } from '../models/kill-statistics-entry.model';
 import { TopKilledCreature } from '../models/top-killed-creature.model';
 
 @Injectable({ providedIn: 'root' })
