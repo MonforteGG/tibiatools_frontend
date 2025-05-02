@@ -7,7 +7,7 @@ import { TopKilledCreature } from '../models/top-killed-creature.model';
 
 @Injectable({ providedIn: 'root' })
 export class TibiaService {
-  private baseUrl = 'http://api.tibiadata.com/v4'; // Ajusta según tu entorno backend
+  private baseUrl = 'https://api.tibiadata.com/v4'; // Ajusta según tu entorno backend
 
   constructor(private http: HttpClient) {}
 
