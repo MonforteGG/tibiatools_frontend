@@ -83,7 +83,7 @@ export class LootClassifierComponent {
 
     this.http
       .post<{ detections: Record<string, LootItem> }>(
-        'http://128.140.74.138:8000/process-json',
+        'https://tibiatools-backend.onrender.com/process-json',
         formData
       )
       .subscribe({
@@ -99,7 +99,7 @@ export class LootClassifierComponent {
       });
 
     this.http
-      .post('http://128.140.74.138:8000/process-image', formData, {
+      .post('https://tibiatools-backend.onrender.com/process-image', formData, {
         responseType: 'blob',
       })
       .subscribe({
