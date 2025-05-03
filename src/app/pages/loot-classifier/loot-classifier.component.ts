@@ -83,7 +83,7 @@ export class LootClassifierComponent {
 
     this.http
       .post<{ detections: Record<string, LootItem> }>(
-        'http://localhost/process-json',
+        '/api/process-json',
         formData
       )
       .subscribe({
@@ -99,7 +99,7 @@ export class LootClassifierComponent {
       });
 
     this.http
-      .post('http://localhost/process-image', formData, {
+      .post('/api/process-image', formData, {
         responseType: 'blob',
       })
       .subscribe({
