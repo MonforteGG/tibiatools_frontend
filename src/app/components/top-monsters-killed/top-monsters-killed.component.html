@@ -13,6 +13,7 @@
         <img
           [src]="getImageUrl(monster.name)"
           [alt]="monster.name"
+          (error)="onImageError($event)"
           class="w-10 h-10 object-contain"
         />
       </div>
