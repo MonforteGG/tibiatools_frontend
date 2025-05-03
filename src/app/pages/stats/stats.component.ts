@@ -45,13 +45,13 @@ export class StatsComponent {
 
   getRashidInfo(): { city: string; description: string; image: string } {
     const rashidLocations = [
-      { city: 'Svargrond', description: 'Inside the tavern in Svarground', image: 'https://i.imgur.com/lSqgOWf.gif' },
-      { city: 'Liberty Bay', description: 'Near the ship in Liberty Bay', image: 'https://i.imgur.com/FHHVMEi.gif' },
-      { city: 'Port Hope', description: 'Near the temple in Port Hope', image: 'https://i.imgur.com/MyswlTV.gif' },
-      { city: 'Ankrahmun', description: 'Inside the magic shop in Ankrahmun', image: 'https://i.imgur.com/bPZprlm.gif' },
-      { city: 'Darashia', description: 'Inside the house west of the bank in Darashia', image: 'https://i.imgur.com/dp96j37.gif' },
-      { city: 'Edron', description: 'Inside the magic shop in Edron', image: 'https://i.imgur.com/eduAmAN.gif' },
-      { city: 'Carlin', description: 'In the first floor of the depot in Carlin', image: 'https://i.imgur.com/4k3Xzmr.gif' },
+      { city: 'Carlin', description: 'In the first floor of the depot in Carlin', image: 'https://i.imgur.com/4k3Xzmr.gif' }, // Domingo
+      { city: 'Svargrond', description: 'Inside the tavern in Svarground', image: 'https://i.imgur.com/lSqgOWf.gif' },       // Lunes
+      { city: 'Liberty Bay', description: 'Near the ship in Liberty Bay', image: 'https://i.imgur.com/FHHVMEi.gif' },        // Martes
+      { city: 'Port Hope', description: 'Near the temple in Port Hope', image: 'https://i.imgur.com/MyswlTV.gif' },          // Miércoles
+      { city: 'Ankrahmun', description: 'Inside the magic shop in Ankrahmun', image: 'https://i.imgur.com/bPZprlm.gif' },    // Jueves
+      { city: 'Darashia', description: 'Inside the house west of the bank in Darashia', image: 'https://i.imgur.com/dp96j37.gif' }, // Viernes
+      { city: 'Edron', description: 'Inside the magic shop in Edron', image: 'https://i.imgur.com/eduAmAN.gif' },            // Sábado
     ];
   
     const today = new Date().getDay(); // 0 = Domingo
