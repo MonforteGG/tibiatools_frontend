@@ -1,66 +1,42 @@
-<nav
-  class="bg-gray-100 outline outline-gray-600/30 dark:outline-gray-100/20 text-gray-800 dark:bg-slate-900 dark:text-white
-         px-6 py-4 flex justify-between items-center shadow-md
-         transition-colors duration-300"
->
-<div class="text-xl font-bold tracking-wide flex justify-center">
-  <div class="flex items-center space-x-2 text-2xl font-bold">
-    <a
-      routerLink="/"
-      class="flex items-center space-x-1 border border-transparent hover:dark:border-slate-100/20 hover:border-slate-700/50 rounded-sm p-2 transition-all duration-400 cursor-pointer"
-    >
-      <img src="assets/images/frozen_starlight.gif" alt="logo" class="w-8 h-8">
-      <span class="tracking-tight">Utevo</span>
-      <span
-        class="bg-indigo-100 text-indigo-700 dark:bg-orange-200 dark:text-orange-700 
-               px-2 py-0.5 rounded-md text-sm font-semibold leading-tight"
-      >
-        Lux
-      </span>
-    </a>
+<nav class="bg-gray-100 dark:bg-slate-900 px-6 py-4 shadow-md">
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2 text-2xl font-bold">
+      <a routerLink="/" class="flex items-center space-x-1 p-2 hover:border hover:rounded">
+        <img src="assets/images/frozen_starlight.gif" alt="logo" class="w-8 h-8" />
+        <span class="tracking-tight">Utevo</span>
+        <span class="bg-indigo-100 text-indigo-700 dark:bg-orange-200 dark:text-orange-700 px-2 py-0.5 rounded-md text-sm font-semibold">Lux</span>
+      </a>
+    </div>
+
+    <!-- Menú Desktop -->
+    <ul class="hidden md:flex space-x-6 text-lg">
+      <li><a routerLink="/" routerLinkActive="font-bold text-orange-500" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li><a routerLink="/classifier" routerLinkActive="font-bold text-orange-500">Loot Classifier</a></li>
+      <li><a routerLink="/stats" routerLinkActive="font-bold text-orange-500">Stats</a></li>
+    </ul>
+
+    <!-- Botones: Modo oscuro y Hamburguesa -->
+    <div class="flex items-center space-x-4">
+      <!-- Tema -->
+      <button class="w-10 h-10 rounded-2xl bg-slate-400/20 dark:bg-white/10 border border-gray-300 dark:border-white/20 shadow-sm flex items-center justify-center hover:scale-105" (click)="toggleImage()">
+        <img [src]="currentImage" alt="Modo oscuro" class="w-8 h-8" />
+      </button>
+
+      <!-- Botón hamburguesa solo en móvil -->
+      <button (click)="toggleMenu()" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
   </div>
-</div>
 
-
-  <ul class="flex space-x-6 text-lg">
-    <li>
-      <a
-        routerLink="/"
-        routerLinkActive="font-bold text-indigo-700 dark:text-orange-400"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="hover:text-indigo-500 dark:hover:text-orange-400 transition"
-        >Home</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/classifier"
-        routerLinkActive="font-bold text-indigo-700 dark:text-orange-400"
-        class="hover:text-indigo-500 dark:hover:text-orange-400 transition"
-        >Loot Classifier</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/stats"
-        routerLinkActive="font-bold text-indigo-700 dark:text-orange-400"
-        class="hover:text-indigo-500 dark:hover:text-orange-400 transition"
-        >Stats</a
-      >
-    </li>
-    
+  <!-- Menú Mobile (colapsado) -->
+  <ul
+    *ngIf="showMenu"
+    class="md:hidden flex flex-col mt-4 space-y-2 text-lg"
+  >
+    <li><a routerLink="/" routerLinkActive="font-bold text-orange-500" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a routerLink="/classifier" routerLinkActive="font-bold text-orange-500">Loot Classifier</a></li>
+    <li><a routerLink="/stats" routerLinkActive="font-bold text-orange-500">Stats</a></li>
   </ul>
-  <button
-  class="w-10 h-10 rounded-2xl bg-slate-400/20 dark:bg-white/10
-         border border-gray-300 dark:border-white/20
-         backdrop-blur-sm shadow-sm flex items-center justify-center
-         transition-all duration-200 hover:scale-105 hover:shadow-md"
-  (click)="toggleImage()"
->
-  <img
-    [src]="currentImage"
-    alt="Modo oscuro"
-    class="w-8 h-8"
-  />
-</button>
 </nav>

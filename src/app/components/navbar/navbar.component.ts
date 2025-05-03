@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
   currentImage: string = '';
   darkMode: boolean = true;
+  showMenu = false;
+
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 
   toggleImage(): void {
     this.darkMode = !this.darkMode;
