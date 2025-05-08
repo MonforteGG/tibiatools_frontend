@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BackgroundComponent } from "../../components/background/background.component";
 import { LayoutComponent } from '../../components/layout/layout.component';
+import { CardComponent } from "../../components/card/card.component";
 
 type Category = 'blue' | 'green' | 'rashid';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, BackgroundComponent, LayoutComponent],
+  imports: [FormsModule, CommonModule, BackgroundComponent, LayoutComponent, CardComponent],
   templateUrl: './loot-classifier.component.html',
   styleUrls: ['./loot-classifier.component.css'],
 })

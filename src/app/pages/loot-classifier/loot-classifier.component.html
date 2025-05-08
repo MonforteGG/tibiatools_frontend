@@ -5,6 +5,38 @@
     headerSubtitle="Analyze and classify your adventure loot"
   >
     <div *ngIf="!processedImageUrl" class="space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+        <app-card title="1. Screenshot Hotkey">
+          <span class="flex justify-center">
+            <img
+              src="/assets/images/config_hotkey.png"
+              alt="Top Creatures"
+              class="h-60 w-60 mb-2"
+            />
+          </span>
+          <p>Go to Tibia settings and assign a hotkey to take screenshots.</p>
+        </app-card>
+        <app-card title="2. Screenshot Configuration">
+          <span class="flex justify-center">
+            <img
+              src="/assets/images/config_screenshot.png"
+              alt="Top Creatures"
+              class="h-60 w-60 mb-2"
+            />
+          </span>
+          <p>In the Screenshot settings, disable the "Only Capture Game Window" option.</p>
+        </app-card>
+        <app-card title="3. Capture your loot">
+          <span class="flex justify-center">
+            <img
+              src="/assets/images/config_loot.png"
+              alt="Top Creatures"
+              class="h-60 w-60 mb-2 rounded"
+            />
+          </span>
+          <p>Place your open loot backpacks inside the left sidebars and press your screenshot hotkey.</p>
+        </app-card>
+      </div>
       <div
         class="border-2 border-dashed rounded-lg p-8 text-center transition-colors"
         [ngClass]="{
@@ -38,7 +70,6 @@
           </button>
         </div>
       </div>
-
       <div
         *ngIf="selectedFile"
         class="bg-slate-100 dark:bg-slate-900 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
@@ -62,7 +93,7 @@
             </svg>
           </div>
         </button>
-      </div>
+      </div>      
     </div>
 
     <div *ngIf="processedImageUrl" class="space-y-6">
